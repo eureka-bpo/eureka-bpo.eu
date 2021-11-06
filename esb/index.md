@@ -3,8 +3,8 @@
 Table of contents
 - [Key features](#key-features)
 - [Usage](#usage)
-    + [eurekabpo/esb:1.0.0-mongodb](#eurekabpo-esb-100-mongodb)
-    + [eurekabpo/esb:1.0.0-mysql](#eurekabpo-esb-100-mysql)
+    + [eurekabpo/esb:1.0.0-mongodb](#eurekabpoesb100-mongodb)
+    + [eurekabpo/esb:1.0.0-mysql](#eurekabpoesb100-mysql)
 - [Configuration file](#configuration-file)
   * [Simple configuration](#simple-configuration)
   * [Full configuration](#full-configuration)
@@ -76,7 +76,7 @@ Target systems:
 
 Description
 
- Configuration parameter | Description 
+ Configuration parameter | Description
 -------------------------|---------------
 Target systems: | Header for list of target systems
 system-one: | Logical name of target system, which can receive requests. You can configure one or more target systems, without limit
@@ -123,7 +123,7 @@ Target systems:
 
 Description
 
- Configuration parameter | Description 
+ Configuration parameter | Description
 -------------------------|---------------
 Options: | Header for list of global settings. Global settings are applied if they are not specified for system (<sup>note 1</sup>)
 HttpConnectTimeout | Time of connect timeout, in seconds
@@ -146,7 +146,7 @@ Notes:
 1. RetryPause must be bigger than HttpConnectTimeout + HttpReadTimeout
 1. With help of extractors it is possible to organize queue for separate objects. Requests from this queue can be evaluated only after previous request for same object. Id of object can be extracter from URL, header or body of http request.
 
-Value of type of extractor | Object Id extracted from | Meaning of options of extractor 
+Value of type of extractor | Object Id extracted from | Meaning of options of extractor
 ------------------|--------------------------|---------------------------------
 HEADER | header | name of header
 URL_REGEX | URL | regex for url string
