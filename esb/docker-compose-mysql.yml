@@ -1,0 +1,37 @@
+version: "3.5"
+
+services:
+
+  db:
+    image: mysql:8.0.26
+    container_name: db
+    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_DATABASE: ${MYSQL_DB_NAME}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "${MYSQL_PORT}:3306"
+    volumes:
+      - ./db:/var/lib/mysql
+
+  app:
+    image: eurekabpo/esb:${ESB_VERSION}-mysql
+    ports:
+      - "8080:8080"
+    restart: always
+    extra_hosts:
+      host.docker.internal: host-gateway
+    environment:
+      MYSQL_HOST: host.docker.internal
+      MYSQL_PORT: ${MYSQL_PORT}
+      MYSQL_DATABASE: ${MYSQL_DB_NAME}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - ./app/configuration.yaml:/opt/esb-app/configuration.yaml
+    depends_on:
+      - db
