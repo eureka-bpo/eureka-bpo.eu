@@ -3,8 +3,9 @@
 Table of contents
 - [Key features](#key-features)
 - [Usage](#usage)
-    + [eurekabpo/esb:1.0.0-mongodb](#eurekabpoesb100-mongodb)
-    + [eurekabpo/esb:1.0.0-mysql](#eurekabpoesb100-mysql)
+    + [eurekabpo/esb:1.1.0-mongodb](#eurekabpoesb100-mongodb)
+    + [eurekabpo/esb:1.1.0-mysql](#eurekabpoesb100-mysql)
+    + [eurekabpo/esb:1.1.0-h2](#eurekabpoesb110-h2)
 - [Configuration file](#configuration-file)
   * [Simple configuration](#simple-configuration)
   * [Full configuration](#full-configuration)
@@ -27,10 +28,11 @@ Here are several features of Eureka BPO ESB:
 ## Usage
 Application Eureka BPO ESB is distributed as docker image. Depending on database you want to use you can choose one of next releases:
 
-- eurekabpo/esb:1.0.0-mongodb - uses MongoDB as storage
-- eurekabpo/esb:1.0.0-mysql - uses MySQL as storage
+- eurekabpo/esb:1.1.0-mongodb - uses MongoDB as storage
+- eurekabpo/esb:1.1.0-mysql - uses MySQL as storage
+- eurekabpo/esb:1.1.0-h2 - uses H2 database as storage
 
-#### eurekabpo/esb:1.0.0-mongodb
+#### eurekabpo/esb:1.1.0-mongodb
 
 Uses MongoDB 4.4 as storage.
 
@@ -46,7 +48,7 @@ MONGO_PASSWORD | optional | password
 
 See [docker-compose.yml](docker-compose-mongodb.yml) to configure Eureka BPO ESB with MongoDB.
 
-#### eurekabpo/esb:1.0.0-mysql
+#### eurekabpo/esb:1.1.0-mysql
 
 Uses MySQL 8.0 as storage
 
@@ -61,6 +63,18 @@ MYSQL_USER | optional | username
 MYSQL_PASSWORD | optional | password
 
 See [docker-compose.yml](docker-compose-mysql.yml) to configure Eureka BPO ESB with MySQL.
+
+#### eurekabpo/esb:1.1.0-h2
+
+Uses H2 database 2.0 as storage
+
+Environment variables for configuring:
+
+Variable name | Required/optional | Description
+--------------|-------------------|------------
+H2_DATABASE_FILE | required | Database filename
+
+See [docker-compose.yml](docker-compose-h2.yml) to configure Eureka BPO ESB with h2.
 
 ## Configuration file
 
