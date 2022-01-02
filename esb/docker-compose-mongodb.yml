@@ -3,7 +3,7 @@ version: "3.5"
 services:
 
   db:
-    image: mongo:4.4.9
+    image: mongo:4.4.10
     container_name: db
     restart: always
     ports:
@@ -22,8 +22,7 @@ services:
     extra_hosts:
       host.docker.internal: host-gateway
     environment:
-      MONGO_HOST: host.docker.internal
-      MONGO_PORT: ${MONGO_PORT}
+      MONGO_SERVERS: host.docker.internal
       MONGO_DATABASE: ${MONGO_DB_NAME}
       MONGO_USER: ${MONGO_USER}
       MONGO_PASSWORD: ${MONGO_PASSWORD}
