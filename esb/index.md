@@ -41,8 +41,7 @@ Environment variables for configuring:
 Variable name | Required/optional | Description
 --------------|-------------------|------------
 MONGO_DATABASE | required | Database name
-MONGO_HOST | required | host
-MONGO_PORT | required | port
+MONGO_SERVERS | required | connection string in format host1:\[port1\]\[,...hostN\[:portN\]\]
 MONGO_USER | optional | username
 MONGO_PASSWORD | optional | password
 
