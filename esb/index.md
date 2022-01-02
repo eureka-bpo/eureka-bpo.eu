@@ -3,8 +3,8 @@
 Table of contents
 - [Key features](#key-features)
 - [Usage](#usage)
-    + [eurekabpo/esb:1.1.0-mongodb](#eurekabpoesb100-mongodb)
-    + [eurekabpo/esb:1.1.0-mysql](#eurekabpoesb100-mysql)
+    + [eurekabpo/esb:1.1.0-mongodb](#eurekabpoesb110-mongodb)
+    + [eurekabpo/esb:1.1.0-mysql](#eurekabpoesb110-mysql)
     + [eurekabpo/esb:1.1.0-h2](#eurekabpoesb110-h2)
 - [Configuration file](#configuration-file)
   * [Simple configuration](#simple-configuration)
