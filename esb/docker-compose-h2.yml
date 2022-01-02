@@ -1,0 +1,16 @@
+version: "3.5"
+
+services:
+
+  app:
+    image: eurekabpo/esb:${ESB_VERSION}-h2
+    ports:
+      - "8080:8080"
+    restart: always
+    extra_hosts:
+      host.docker.internal: host-gateway
+    environment:
+      H2_DATABASE_FILE: ${H2_DATABASE_FILE}
+    volumes:
+      - ./app/configuration.yaml:/opt/app/configuration.yaml
+      - ./h2-database.mv.db:/opt/app/${H2_DATABASE_FILE}.mv.db
